@@ -10,3 +10,4 @@ c = Ponto(3,1)
 d = Ponto(1,1)
 print((c.x,c.y) in lista)
 
+
