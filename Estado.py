@@ -1,9 +1,10 @@
 from Ponto import Ponto
 from Heap import Heap
-from Matriz import Matriz
+from labirinto import labirinto
 
 class Estado:
-    def __init__(self,PontoAtual,PontoFinal, passos):
+    def __init__(self,matriz,PontoAtual,PontoFinal, passos):
+        self.matriz = matriz
         self.PontoAtual = PontoAtual
         self.PontoFinal = PontoFinal
 
@@ -25,8 +26,8 @@ class Estado:
         for i in range(1,5):
             proxEstado = Ponto.RetornaPonto(self.PontoAtual, i)
             print(" x:{} - y:{}".format( proxEstado.x, proxEstado.y))
-            if (Matriz.acessaPonto(proxEstado.x, proxEstado.y) != 0) and ((proxEstado.x, proxEstado.y) not in estados_Passados):
-                saida.append(Estado(proxEstado, self.PontoFinal, self.g + 1))
+            if (self.matriz[proxEstado.y][proxEstado.x] != 0) and ((proxEstado.x, proxEstado.y) not in estados_Passados):
+                saida.append(Estado(self.matriz,proxEstado, self.PontoFinal, self.g + 1))
         return saida
     
     

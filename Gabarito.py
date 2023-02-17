@@ -1,7 +1,6 @@
 from Estado import Estado
 from Heap import Heap
 from Ponto import Ponto
-from Matriz import Matriz
 
 class Gabarito:
 
