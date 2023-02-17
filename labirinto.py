@@ -9,6 +9,13 @@ class labirinto:
         self.matriz = self.inicializa_Matriz_Zero()
         self.ponto_Inicial = None
         self.ponto_Final = None
+        self.Gera_Labirinto()
+        self.Define_Inicio_Fim()
+    
+    def acessa_Elemento(self,x,y):
+        num = self.matriz[y][x]
+        return num
+ 
 
     def inicializa_Matriz_Zero(self):
         mat = []     
@@ -69,12 +76,25 @@ class labirinto:
                 if (self.matriz[ponto[3]][ponto[2]]==0):
                     self.matriz[ponto[1]][ponto[0]] = 1
                     self.matriz[ponto[3]][ponto[2]] = 1
-                    labirinto.imprime_Matriz(self)
                     lista += labirinto.retorna_Corredores(lista_proibida,ponto[2],ponto[3])
 
+    def Define_Inicio_Fim(self):
+        inicio = randint(1,(self.altura-1))
+        while self.matriz[inicio][1] != 1:
+             inicio = randint(1,(self.altura-1))
+        Ponto_Inicio= Ponto(0, inicio)
+        
+        fim = randint(1,(self.altura-1))
+        while self.matriz[fim][self.largura-2] != 1:
+            fim = randint(1,(self.altura-1))
+        Ponto_Fim= Ponto(self.largura-1, fim)
+
+        self.matriz[inicio][0] = 1
+        self.matriz[fim][self.largura-1] = 1
+
+        self.ponto_Inicial = Ponto_Inicio
+        self.ponto_Final = Ponto_Fim
 
 
-mat = labirinto(11,9)
-mat.Gera_Labirinto()
-mat.imprime_Matriz()
+
  

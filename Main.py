@@ -1,10 +1,16 @@
 from Estado import Estado
 from Ponto import Ponto
 from Gabarito import Gabarito
+from labirinto import labirinto
 
-inicio = Ponto(1, 1)
-fim = Ponto(1, 9)
-estadoInicial = Estado(inicio,fim,0)
+
+matriz = labirinto(11,9)
+inicio = matriz.ponto_Inicial
+fim = matriz.ponto_Final
+print("ini: {} fim: {}".format(inicio,fim))
+matriz.imprime_Matriz()
+
+estadoInicial = Estado(matriz.matriz,inicio,fim,0)
 resposta = Gabarito.busca_Informada(estadoInicial) 
 
 if resposta == 0:
