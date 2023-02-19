@@ -32,16 +32,16 @@ class labirinto:
     
     def retorna_Corredores(lista_proibida,x,y):
         lista = []
-        if (x-1,y,x-2,y) not in lista_proibida:
+        if (x-1,y,x-2,y) not in lista_proibida :
             lista.append((x-1,y,x-2,y))#esq
             lista_proibida.add((x-1,y,x-2,y))
-        if (x,y-1,x,y-2) not in lista_proibida:    
+        if (x,y-1,x,y-2) not in lista_proibida :    
             lista.append((x,y-1,x,y-2))#cima
-            lista_proibida.add((x,y-1,x,y-2))
-        if (x+1,y,x+2,y) not in lista_proibida:
+            lista_proibida.add((x,y-1,x,y-2)) 
+        if (x+1,y,x+2,y) not in lista_proibida :
             lista.append((x+1,y,x+2,y))#dir
             lista_proibida.add((x+1,y,x+2,y))
-        if (x,y+1,x,y+2) not in lista_proibida:
+        if (x,y+1,x,y+2) not in lista_proibida :
             lista.append((x,y+1,x,y+2))#baixo
             lista_proibida.add((x,y+1,x,y+2))
 

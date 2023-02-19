@@ -11,6 +11,8 @@ class Gabarito:
         fila_De_Prioridade.append(estado_Atual)
         vetor = []
         while len(fila_De_Prioridade) > 0:
+            estado_Atual.caminho +=[(estado_Atual.PontoAtual.x, estado_Atual.PontoAtual.y)]
+            print("caminhos : {}" .format(estado_Atual.caminho))
             if (estado_Atual.PontoAtual.x == estado_Atual.PontoFinal.x) and  (estado_Atual.PontoAtual.y == estado_Atual.PontoFinal.y):
                 estados_Passados.add((estado_Atual.PontoAtual.x, estado_Atual.PontoAtual.y))
                 return estados_Passados
@@ -24,6 +26,8 @@ class Gabarito:
             fila_De_Prioridade = Heap.remover_Primeiro_Elemento(fila_De_Prioridade)
 
             if len(fila_De_Prioridade)!=0:# tratar o caso que nao tem solucao
+                print("Fila Prioridade: {}" .format(fila_De_Prioridade))
                 estado_Atual = fila_De_Prioridade[0]
+
         
         return 0

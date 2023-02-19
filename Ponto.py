@@ -23,9 +23,9 @@ class Ponto:
     # Retorna os pontos de possiveis movimentações a partir de um ponto
     def RetornaPonto(self, direcao):
         proxPonto = Ponto(self.x,self.y)
-        if direcao == 1:
+        if  direcao == 1:
             proxPonto.set_y(-1) # Para cima
-        elif direcao == 2:
+        elif direcao == 2 :
             proxPonto.set_y(+1) # Para baixo
         elif direcao == 3:
             proxPonto.set_x(-1) # Para esquerda
@@ -33,6 +33,7 @@ class Ponto:
             proxPonto.set_x(+1) # para direita
         
         return proxPonto
+
     
     # Retorna a distancia entre dois pontos
     def DistanciaEntreDoisPonto(self, other): 
