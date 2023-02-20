@@ -17,8 +17,8 @@ class Ponto:
         self.y+=num
 
     # Sobrecarrega a funcao que compara a igualdade
-    def __eq__(self,other):
-        return (self.x == other.x) and (self.y == other.y)
+    #def __eq__(self,other):
+    #    return (self.x == other.x) and (self.y == other.y)
         
     # Retorna os pontos de possiveis movimentações a partir de um ponto
     def RetornaPonto(self, direcao):

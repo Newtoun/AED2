@@ -113,8 +113,8 @@ if __name__ == "__main__" :
     fim = matriz.ponto_Final
     print("ini: {} fim: {}".format(inicio,fim))
     matriz.imprime_Matriz()
-    way = []
-    estadoInicial = Estado(matriz.matriz,inicio,fim,0,way)
+    
+    estadoInicial = Estado(matriz.matriz,inicio,fim,0)
     resposta = Gabarito.busca_Informada(estadoInicial) 
     
     if resposta == 0:
